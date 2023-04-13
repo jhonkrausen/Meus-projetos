@@ -6,6 +6,7 @@ class main:
         
         self.janela = Tk()
         self.janela.title("Gerador de Folha Salarial")
+        #usei minsize e maxsize como gambiarra pro resultado do calculo não esticar a janela infinitamente
         self.janela.minsize(width="300", height="600")
         self.janela.maxsize(width="300", height="600")
         self.janela.resizable(0,0)
@@ -14,6 +15,10 @@ class main:
         self.labelHoras = Label(self.janela, font='arial 10 bold', bg="BLACK", fg="#68228B", text="DIGITE AS HORAS TRABALHADAS!")
         self.labelHoras.pack()
 
+        #usei Spinbox para receber os valores de Horas e Salario
+        #não usei Entry pois não consegui converter os valores de str para tipos numéricos
+        #aceito dicas para melhorar
+        #  
         self.spinHoras = Spinbox(self.janela, from_="0", to="999", font='arial 20 bold', bg="WHITE", fg="BLACK")
         self.spinHoras.pack()
 
@@ -61,6 +66,11 @@ class main:
         self.DescTotal = self.DescIr + self.DescInss
         self.SalarioLiquido = self.SalarioBruto - self.DescTotal 
 
+        #criei esse Text dentro da função calculo pois não sei como chama-lo de fora da função
+        #ele recebe .pack sempre que a função é chamada, então ele é gerado infinitamente e fica esticando a janela
+        #usei o after como gambiarra pra ele aparecer sempre em cima do anterior, se não ele aparece em baixo e some
+        #não consegui usar o pack_forget pra apagar o anterior a cada vez que é gerado um novo
+        
         self.folhaSalario = Text(self.janela, font='arial 12 bold', bg="WHITE", fg="BLACK", width="36")
         self.folhaSalario.insert("1.0",f"SALÁRIO BRUTO: R$ {self.SalarioBruto}\nSALÁRIO LÍQUIDO: R${self.SalarioLiquido}\nFGTS: R$ {self.DescFgts}\nINSS: R$ {self.DescInss}\nIR: R$ {self.DescIr}\nDESCONTOS TOTAIS: R$ {self.DescTotal}")
         self.folhaSalario.pack(after=self.botaoCalcula)
