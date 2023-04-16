@@ -63,7 +63,7 @@ def calculaValor():
     calculaValor.valorTotal = calculaValor.valorMaca + calculaValor.valorMorango
 
     if calculaValor.valorTotal > 25 or calculaValor.pesoTotal > 8:
-        calculaValor.valorLiquido = calculaValor.valorTotal * 0.75
+        calculaValor.valorLiquido = calculaValor.valorTotal * 0.90
         calculaValor.desconto = True
     else:
         calculaValor.valorLiquido = calculaValor.valorTotal
@@ -80,7 +80,7 @@ def prints():
     print("----------------------------------------------------------------------------------")
     if calculaValor.desconto == True:
         print(f"O valor total é: R$ {calculaValor.valorTotal:.2f}")
-        print(f"Você recebeu 25% de desconto e pagará R$ {calculaValor.valorLiquido:.2f}")
+        print(f"Você recebeu 10% de desconto e pagará R$ {calculaValor.valorLiquido:.2f}")
     else:
         print(f"Você pagará o valor total de R$ {calculaValor.valorTotal:.2f}")
     maisFrutas()
