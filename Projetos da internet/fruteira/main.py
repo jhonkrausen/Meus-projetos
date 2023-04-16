@@ -71,19 +71,20 @@ def calculaValor():
     prints()
 
 def prints():
-
+    print("----------------------------------------------------------------------------------")
     if frutas["Morango"] > 0:
-        print(f"Você comprou {frutas['Morango']} kg de morango por R$ {calculaValor.valorMorango}")
+        print(f"Você comprou {frutas['Morango']} kg de morango por R$ {calculaValor.valorMorango:.2f}")
 
     if frutas["Maçã"] > 0:
-        print(f"Você comprou {frutas['Maçã']} kg de maçã por R$ {calculaValor.valorMaca}")
-
+        print(f"Você comprou {frutas['Maçã']} kg de maçã por R$ {calculaValor.valorMaca:.2f}")
+    print("----------------------------------------------------------------------------------")
     if calculaValor.desconto == True:
-        print(f"O valor total é: R$ {calculaValor.valorTotal}")
-        print(f"Você recebeu 25% de desconto e pagará R$ {calculaValor.valorLiquido}")
+        print(f"O valor total é: R$ {calculaValor.valorTotal:.2f}")
+        print(f"Você recebeu 25% de desconto e pagará R$ {calculaValor.valorLiquido:.2f}")
     else:
-        print(f"Você pagará o valor total de R$ {calculaValor.valorTotal}")
+        print(f"Você pagará o valor total de R$ {calculaValor.valorTotal:.2f}")
     maisFrutas()
+    print("----------------------------------------------------------------------------------")
 main()
 
 
