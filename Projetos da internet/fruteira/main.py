@@ -83,6 +83,8 @@ def prints():
         print(f"Você recebeu 10% de desconto e pagará R$ {calculaValor.valorLiquido:.2f}")
     else:
         print(f"Você pagará o valor total de R$ {calculaValor.valorTotal:.2f}")
+    frutas["Morango"] = 0
+    frutas["Maçã"] = 0
     maisFrutas()
     print("----------------------------------------------------------------------------------")
 main()
