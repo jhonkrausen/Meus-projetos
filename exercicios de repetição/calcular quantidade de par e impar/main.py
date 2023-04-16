@@ -13,3 +13,4 @@ for i in range(1, 11):
 
 print(f"os números pares são: {pares}", end = ' ')
 print(f"\nos números impares são: {impares}", end = ' ')
+
