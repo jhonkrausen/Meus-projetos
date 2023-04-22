@@ -17,5 +17,3 @@ class Autenticar:
             print("Email ou senha incorretos!")
 
         conexao.close()
-        print(resultado)
-        print(email)

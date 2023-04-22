@@ -10,4 +10,3 @@ class Cadastrar:
         mycursor.execute(sql, val)
         conexao.commit()
         conexao.close()
-        print("INSERIDO!")
