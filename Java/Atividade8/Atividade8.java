@@ -1,20 +1,22 @@
 package Atividade8;
 import java.util.Scanner;
 
+
 public class Atividade8 {
 
-    public static Conta conta = new Conta();
+
     public static void main(String[] args) {
-        System.out.println(Cores.Roxo + "BEM VINDO!" + Cores.Cor);
+        
+        System.out.println("BEM VINDO!");
         boolean loop = true;
         while (loop == true){
             options();
         }
     }
-
+    public static Contas conta = new Contas();
+    public static Scanner entraDados = new Scanner(System.in);
     public static void options(){
         
-        Scanner entraDados = new Scanner(System.in);
         System.out.println("-------------------------");
         System.out.println("OPÇÕES: ");
         System.out.println("1 - ABRIR CONTA");
@@ -25,19 +27,19 @@ public class Atividade8 {
         System.out.println("6 - INFORMAÇÕES DA CONTA");
         System.out.println("-------------------------");
 
-        int option = entraDados.nextInt();
+        String option = entraDados.nextLine();
 
-        if(option == 1){
-            System.out.print("Digite o seu nome: " + Cores.Ciano);
+        if(option == "1"){
+            System.out.print("Digite o seu nome: ");
             String d = entraDados.next();
-            System.out.print(Cores.Cor + "Digite o tipo da conta(CC ou CP): " + Cores.Ciano);
+            System.out.print("Digite o tipo da conta(CC ou CP): ");
             String t = entraDados.next();
-            System.out.print(Cores.Cor + "Digite o número da sua conta: " + Cores.Ciano);
+            System.out.print("Digite o número da sua conta: ");
             int n = entraDados.nextInt();
             conta.abrirConta(d,t,n);
-            System.out.println(Cores.Cor + "Conta criada com sucesso!");
+            System.out.println("Conta criada com sucesso!");
         }
-        else if(option == 2){
+        else if(option == "2"){
             if(conta.getStatus() == true) {
                 if (conta.getSaldo() > 0){
                     System.out.println("Saldo positivo! não pode fechar a conta.");
@@ -54,56 +56,56 @@ public class Atividade8 {
                 System.out.println("Você ainda não tem uma conta!");
             }
         }
-        else if(option == 3){
+        else if(option == "3"){
             if(conta.getStatus() == true){
                 System.out.print("Quanto você quer depositar?: ");
                 double m = entraDados.nextInt();
                 System.out.println("Você tem certeza?");
                 System.out.println("1 - SIM");
                 System.out.println("2 - NÃO");
-                option = entraDados.nextInt();
-                if (option == 1){
+                option = entraDados.nextLine();
+                if (option == "1"){
                     conta.depositar(m);
                     System.out.println("Você depositou " + m + " com sucesso!");
-                    option = 0;
+                    option = null;
                 }
-                else if(option == 2){
+                else if(option == "2"){
                     System.out.println("Obrigado!");
-                    option = 0;
+                    option = null;
                 }
             }
             else{
                 System.out.println("Você ainda não tem uma conta!");
             }
         }
-        else if(option == 4){
+        else if(option == "4"){
             if(conta.getStatus() == true){
                 System.out.print("Quanto você quer sacar?: ");
                 double m = entraDados.nextInt();
                 System.out.println("Você tem certeza?");
                 System.out.println("1 - SIM");
                 System.out.println("2 - NÃO");
-                option = entraDados.nextInt();
-                if (option == 1){
+                option = entraDados.nextLine();
+                if (option == "1"){
                     if(conta.getSaldo() >= m){
                         conta.sacar(m);
                         System.out.println("Você sacou " + m + " com sucesso!");
-                        option = 0;
+                        option = null;
                     }
                     else{
                         System.out.println("Saldo insuficiente!");
                     }
                 }
-                else if(option == 2){
+                else if(option == "2"){
                     System.out.println("Obrigado!");
-                    option = 0;
+                    option = null;
                 }
             }
             else{
                 System.out.println("Você ainda não tem uma conta!");
             }
         }
-        else if(option == 5){
+        else if(option == "5"){
             if(conta.getStatus() == true){
                 System.out.println("Seu saldo é: " + conta.getSaldo());
             }
@@ -111,7 +113,7 @@ public class Atividade8 {
                 System.out.println("Você ainda não tem uma conta!");
             }
         }
-        else if(option == 6){
+        else if(option == "6"){
             if(conta.getStatus() == true){
                 conta.info();
             }

@@ -1,6 +1,6 @@
 package Atividade8;
 
-public class Conta {
+public class Contas {
     
     private String dono;
     private String tipo;
@@ -8,7 +8,7 @@ public class Conta {
     private int numConta;
     private boolean status;
 
-    public Conta(){
+    public Contas(){
         this.saldo = 0;
         this.status = false;
     }
@@ -82,9 +82,9 @@ public class Conta {
         System.out.println("NUMERO: " + this.getNumConta());
         System.out.println("TIPO: " + this.getTipo());
         if(getSaldo() == 0){
-            System.out.println("SALDO: R$" + Cores.Vermelho + this.getSaldo() + Cores.Cor);
+            System.out.println("SALDO: R$" + this.getSaldo());
         }else{
-            System.out.println("SALDO: R$" + Cores.Verde + this.getSaldo() + Cores.Cor);
+            System.out.println("SALDO: R$" + this.getSaldo());
         }
         System.out.println("--------------------------------");
     }
