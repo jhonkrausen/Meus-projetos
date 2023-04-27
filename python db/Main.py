@@ -5,7 +5,6 @@ from Autenticar import *
 
 class Main():
     
-
     def options():
         print("----------------")
         print("1 - ENTRAR")
